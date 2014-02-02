@@ -1,0 +1,75 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apache2 (1.8.14)
+    apt (2.3.4)
+    bluepill (2.3.1)
+      rsyslog (>= 0.0.0)
+    build-essential (1.4.2)
+    imagemagick (0.2.2)
+    logrotate (1.4.0)
+    mongodb (0.13.7)
+      apt (>= 1.8.2)
+      python (>= 0.0.0)
+      runit (>= 1.1.6)
+      yum (>= 0.0.0)
+    mysql (4.0.20)
+      build-essential (~> 1.4)
+      openssl (~> 1.1)
+    nginx (2.2.2)
+      apt (~> 2.2)
+      bluepill (~> 2.3)
+      build-essential (~> 1.4)
+      ohai (~> 1.1)
+      runit (~> 1.2)
+      yum (~> 3.0)
+      yum-epel (>= 0.0.0)
+    ohai (1.1.12)
+    openssl (1.1.0)
+    python (1.4.6)
+      build-essential (>= 0.0.0)
+      yum-epel (>= 0.0.0)
+    rsyslog (1.10.2)
+    runit (1.5.8)
+      build-essential (>= 0.0.0)
+      yum (~> 3.0)
+      yum-epel (>= 0.0.0)
+    yum (3.0.6)
+    yum-epel (0.2.0)
+      yum (~> 3.0)
+
+GIT
+  remote: https://github.com/ctrabold/chef-redis
+  ref: master
+  sha: e3a89f34d0f5b81867ae9e07a9404ac89e1ff61c
+  specs:
+    redis (0.0.4)
+
+GIT
+  remote: https://github.com/fnichol/chef-git.git
+  ref: master
+  sha: 6c19cbefcdad5ec0f62a64dae1f656d660698ea3
+  specs:
+    git (0.9.0)
+      runit (>= 0.0.0)
+
+GIT
+  remote: https://github.com/hectcastro/chef-memcached
+  ref: master
+  sha: 80f5201af0f2c9ee81dff097c70da52d9ed2de2a
+  specs:
+    memcached (0.2.0)
+      logrotate (>= 0.0.0)
+
+DEPENDENCIES
+  apache2 (>= 0)
+  apt (>= 0)
+  build-essential (>= 0)
+  git (>= 0)
+  imagemagick (>= 0)
+  memcached (>= 0)
+  mongodb (>= 0)
+  mysql (>= 0)
+  nginx (>= 0)
+  redis (>= 0)
+
