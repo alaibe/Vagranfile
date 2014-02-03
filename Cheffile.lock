@@ -1,11 +1,12 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
-    apache2 (1.8.14)
     apt (2.3.4)
     bluepill (2.3.1)
       rsyslog (>= 0.0.0)
     build-essential (1.4.2)
+    curl (1.1.0)
+    emacs (0.9.0)
     imagemagick (0.2.2)
     logrotate (1.4.0)
     mongodb (0.13.7)
@@ -34,9 +35,19 @@ SITE
       build-essential (>= 0.0.0)
       yum (~> 3.0)
       yum-epel (>= 0.0.0)
+    tmux (1.4.0)
+    vim (1.1.2)
     yum (3.0.6)
     yum-epel (0.2.0)
       yum (~> 3.0)
+    zsh (1.0.0)
+
+GIT
+  remote: https://github.com/arafatm/dotfiles.chef
+  ref: master
+  sha: 9abc157b5de6574a86b5bed4fb6ff97797e85b73
+  specs:
+    dotfiles (0.1.0)
 
 GIT
   remote: https://github.com/ctrabold/chef-redis
@@ -62,9 +73,11 @@ GIT
       logrotate (>= 0.0.0)
 
 DEPENDENCIES
-  apache2 (>= 0)
   apt (>= 0)
   build-essential (>= 0)
+  curl (>= 0)
+  dotfiles (>= 0)
+  emacs (>= 0)
   git (>= 0)
   imagemagick (>= 0)
   memcached (>= 0)
@@ -72,4 +85,7 @@ DEPENDENCIES
   mysql (>= 0)
   nginx (>= 0)
   redis (>= 0)
+  tmux (>= 0)
+  vim (>= 0)
+  zsh (>= 0)
 

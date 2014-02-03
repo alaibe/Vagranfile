@@ -30,25 +30,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Default value: false
   # config.ssh.forward_agent = true
 
-  # Share an additional folder to the guest VM. The first argument is
-  # the path on the host to the actual folder. The second argument is
-  # the path on the guest to mount the folder. And the optional third
-  # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
-
-  # Enable provisioning with chef solo, specifying a cookbooks path, roles
-  # path, and data_bags path (all relative to this Vagrantfile), and adding
-  # some recipes and/or roles.
-  #
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["cookbooks"]
+    chef.data_bags_path = "data_bags"
 
     chef.add_recipe 'apt'
     chef.add_recipe 'build-essential'
     chef.add_recipe 'git'
     chef.add_recipe 'imagemagick'
+    chef.add_recipe 'curl'
 
-    chef.add_recipe 'apache2'
     chef.add_recipe 'nginx'
 
     chef.add_recipe 'mysql::server'
@@ -59,12 +50,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe 'memcached'
     chef.add_recipe 'redis'
 
+    chef.add_recipe 'tmux'
+    chef.add_recipe 'vim'
+    chef.add_recipe 'emacs'
+    chef.add_recipe 'zsh'
+    chef.add_recipe 'dotfiles'
+
     chef.json = {
       "mysql" => {
         "server_root_password" => "",
         "server_debian_password" => "",
         "server_repl_password" => "",
-      }
+      },
+      "dotfiles" => {
+        "user" => "vagrant",
+        "group" => "vagrant",
+        "public_key" => IO.read(File.expand_path("~/.ssh/id_rsa.pub")),
+        "private_key" => IO.read(File.expand_path("~/.ssh/id_rsa"))
+      },
+      "user" => "alaibe"
     }
   end
 end

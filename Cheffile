@@ -7,8 +7,8 @@ cookbook 'apt'
 cookbook 'build-essential'
 cookbook 'git', git: 'https://github.com/fnichol/chef-git.git'
 cookbook 'imagemagick'
+cookbook 'curl'
 
-cookbook 'apache2'
 cookbook 'nginx'
 
 cookbook 'mysql'
@@ -16,3 +16,9 @@ cookbook 'mongodb'
 
 cookbook 'memcached', :git => 'https://github.com/hectcastro/chef-memcached'
 cookbook 'redis', :git => 'https://github.com/ctrabold/chef-redis'
+
+cookbook 'tmux'
+cookbook 'vim'
+cookbook 'emacs'
+cookbook 'zsh'
+cookbook 'dotfiles', git: "https://github.com/arafatm/dotfiles.chef"
