@@ -10,7 +10,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
+
+  config.vm.synced_folder "src", "/home/vagrant"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -32,7 +34,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["cookbooks"]
-    chef.data_bags_path = "data_bags"
 
     chef.add_recipe 'apt'
     chef.add_recipe 'build-essential'
@@ -50,25 +51,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe 'memcached'
     chef.add_recipe 'redis'
 
-    chef.add_recipe 'tmux'
     chef.add_recipe 'vim'
-    chef.add_recipe 'emacs'
-    chef.add_recipe 'zsh'
-    chef.add_recipe 'dotfiles'
+    chef.add_recipe 'rvm'
 
     chef.json = {
+      'rvm' => {
+        'user_installs' => {
+          'user'         => 'vagrant',
+          'default_ruby' => 'ruby-2.1.0',
+          'rubies'       => ['2.1.0', '1.9.2-p320']
+        }
+      },
       "mysql" => {
         "server_root_password" => "",
         "server_debian_password" => "",
         "server_repl_password" => "",
       },
-      "dotfiles" => {
-        "user" => "vagrant",
-        "group" => "vagrant",
-        "public_key" => IO.read(File.expand_path("~/.ssh/id_rsa.pub")),
-        "private_key" => IO.read(File.expand_path("~/.ssh/id_rsa"))
-      },
-      "user" => "alaibe"
     }
+
+    #configure nginx
+    #congigure unicorn
   end
 end

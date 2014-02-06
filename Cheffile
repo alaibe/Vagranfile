@@ -10,6 +10,7 @@ cookbook 'imagemagick'
 cookbook 'curl'
 
 cookbook 'nginx'
+cookbook 'unicorn'
 
 cookbook 'mysql'
 cookbook 'mongodb'
@@ -17,8 +18,5 @@ cookbook 'mongodb'
 cookbook 'memcached', :git => 'https://github.com/hectcastro/chef-memcached'
 cookbook 'redis', :git => 'https://github.com/ctrabold/chef-redis'
 
-cookbook 'tmux'
 cookbook 'vim'
-cookbook 'emacs'
-cookbook 'zsh'
-cookbook 'dotfiles', git: "https://github.com/arafatm/dotfiles.chef"
+cookbook 'rvm'
