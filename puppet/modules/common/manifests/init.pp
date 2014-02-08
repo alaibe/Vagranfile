@@ -59,6 +59,12 @@ class common {
   package { "vim":
     ensure => present,
   }
+  package { "libmysqlclient-dev":
+    ensure => present,
+  }
+  package { "libmysql-ruby":
+    ensure => present,
+  }
 
   exec { "apt-get update":
     command => "/usr/bin/apt-get update"
