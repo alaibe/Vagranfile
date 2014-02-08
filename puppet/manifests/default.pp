@@ -7,6 +7,10 @@ rbenv::compile { '2.1.0':
   user => 'vagrant',
 }
 
+class { 'nodejs':
+  version => 'v0.10.25',
+}
+
 class { 'nginx':
   package_source  => 'passenger',
   http_cfg_append => {
