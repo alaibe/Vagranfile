@@ -5,6 +5,7 @@ rbenv::install { 'vagrant':
 
 rbenv::compile { '2.1.0':
   user => 'vagrant',
+  global => true,
 }
 
 class { 'nodejs':
