@@ -65,6 +65,21 @@ class common {
   package { "libmysql-ruby":
     ensure => present,
   }
+  package { "libmagickwand-dev":
+    ensure => present,
+  }
+  package { "sqlite3":
+    ensure => present,
+  }
+  package { "libsqlite3-ruby":
+    ensure => present,
+  }
+  package { "libsqlite3-dev":
+    ensure => present,
+  }
+  package { "libcurl4-openssl-dev":
+    ensure => present,
+  }
 
   exec { "apt-get update":
     command => "/usr/bin/apt-get update"
