@@ -19,6 +19,6 @@
 [submodule "puppet/modules/wget"]
 	path = puppet/modules/wget
 	url = git://github.com/maestrodev/puppet-wget.git
-[submodule "puppet/modules/nvm"]
-	path = puppet/modules/nvm
+[submodule "puppet/modules/nvm_nodejs"]
+	path = puppet/modules/nvm_nodejs
 	url = https://github.com/proletaryo/puppet-nvm_nodejs
