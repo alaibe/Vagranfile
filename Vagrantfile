@@ -17,4 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :puppet,
     manifests_path: 'puppet/manifests',
     module_path: 'puppet/modules'
+
+  #Add your personal stuff here
+  config.vm.provision :shell, :path => "bootstrap.sh"
 end

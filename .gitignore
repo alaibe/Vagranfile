@@ -2,3 +2,4 @@ cookbooks
 tmp
 .vagrant
 src/*
+bootstrap.sh
