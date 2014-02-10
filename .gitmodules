@@ -16,9 +16,9 @@
 [submodule "puppet/modules/rbenv"]
 	path = puppet/modules/rbenv
 	url = https://github.com/alup/puppet-rbenv
-[submodule "puppet/modules/nodejs"]
-	path = puppet/modules/nodejs
-	url = git://github.com/willdurand/puppet-nodejs.git
 [submodule "puppet/modules/wget"]
 	path = puppet/modules/wget
 	url = git://github.com/maestrodev/puppet-wget.git
+[submodule "puppet/modules/nvm"]
+	path = puppet/modules/nvm
+	url = https://github.com/proletaryo/puppet-nvm_nodejs

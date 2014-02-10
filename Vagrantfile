@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "src", "/home/vagrant/apps"
 
   config.vm.network :forwarded_port, guest: 80, host: 80
-  config.vm.network :private_network, ip: "10.10.10.10"
+  config.vm.network :private_network, ip: "192.168.40.10"
 
 
   config.vm.provision :puppet,
