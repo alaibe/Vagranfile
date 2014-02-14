@@ -17,6 +17,4 @@ class { 'nginx':
 }
 
 class { '::mysql::server':
-  root_password    => ''
 }
-
