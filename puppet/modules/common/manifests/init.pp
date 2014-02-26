@@ -80,6 +80,9 @@ class common {
   package { "libcurl4-openssl-dev":
     ensure => present,
   }
+  package { "memcached":
+    ensure => present,
+  }
 
   exec { "apt-get update":
     command => "/usr/bin/apt-get update"
